@@ -1,0 +1,184 @@
+// ----------------- VARIABLES
+
+$veryDarkGray: hsl(0, 0%, 17%);
+$darkGray: hsl(0, 0%, 59%);
+$white: hsl(0, 0%, 100%);
+$black: hsl(0, 0%, 0%);
+
+$maxWidth: 45rem;
+
+// ----------------- GENERAL STYLE
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  background: $white url('../images/pattern-bg.png') no-repeat top center;
+  font: 400 18px 'Rubik', sans-serif;
+  width: 100%;
+  height: 100%;
+}
+
+a, a:visited, a:hover {
+  text-decoration: none;
+}
+
+// ----------------- HEADER & SEARCH FORM
+
+header {
+  position: relative;
+  height: 13.75rem;
+  margin: 0 1.5rem;
+  text-align: center;
+
+  h1 {
+    font-size: 1.875rem;
+    margin: 1.875rem 0 1.75rem;
+    color: $white;
+  }
+}
+
+#searchBar {
+  display: flex;
+  max-width: 34.6875rem;
+  margin: auto;
+  border-radius: 0.625rem;
+  overflow: hidden;
+
+  input {
+    flex: 1;
+    font-size: 1.15625rem;
+    padding: 1.125rem 0 1.125rem 1.5rem;
+    border: 0;
+    outline: none;
+  }
+
+  button {
+    font-size: 1.25rem;
+    background-color: $black;
+    width: 3.625rem;
+    color: $white;
+    border: 0;
+    cursor: pointer;
+    transition: background-color 300ms ease-in-out;
+
+    &:hover {
+      background-color: $veryDarkGray;
+    }
+  }
+}
+
+// ----------------- MAP SECTION
+
+#map {
+  background-color: rgba(165, 28, 28, 0.2);
+  height: 100%;
+  min-height: 32rem;
+  z-index: 10;
+}
+
+// ----------------- IP DETAILS
+
+#trackerDetails {
+  position: absolute;
+  top: 12.5rem;
+  left: 10%;
+  right: 10%;
+  display: flex;
+  background-color: $white;
+  width: 80%;
+  border-radius: 0.75rem;
+  z-index: 100;
+
+  > div {
+    width: 25%;
+    padding: 2.125rem 2rem;
+    text-align: left;
+  }
+
+  .nameTrack {
+    font-weight: 700;
+    font-size: 0.875rem;
+    margin-bottom: 0.875rem;
+    text-transform: uppercase;
+    color: $darkGray;
+  }
+
+  .detailTrack {
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+}
+
+#ipAddress {
+  .detailTrack {
+    word-break: break-all;
+  }
+}
+
+// ----------------- ATTRIBUTION
+
+.attribution {
+  font-size: 11px;
+  padding: 0.625rem 0;
+  text-align: center;
+  border-top: 1px solid $darkGray;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media(max-width: $maxWidth) {
+
+// ----------------- HEADER
+  
+  header {
+    h1 {
+      font-size: 1.5625rem;
+      margin: 1.75rem 0 1.75rem;
+    }
+  }
+
+// ----------------- MAP SECTION
+  
+  #map {
+    height: 32rem;
+  }
+
+// ----------------- IP DETAILS
+
+  #trackerDetails {
+    flex-direction: column;
+    width: 90%;
+    top: 10.375rem;
+    left: 5%;
+    right: 5%;
+    padding-bottom: 1.5rem;
+
+    > div {
+      width: 100%;
+      padding: 1.5rem 0 0;
+      text-align: center;
+    }
+
+    .nameTrack {
+      font-size: 0.75rem;
+      margin-bottom: 0.375rem;
+    }
+
+    .detailTrack {
+      font-weight: 700;
+      font-size: 1.1875rem;
+    }
+  }
+
+}
